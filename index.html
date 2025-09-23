@@ -18,7 +18,11 @@
     const stats = new Stats();
     stats.showPanel(0); // 0 = FPS
     document.body.appendChild(stats.dom);
-
+    
+    // Make it bigger
+    stats.dom.style.transform = "scale(4)";   // 4x larger
+    stats.dom.style.transformOrigin = "top left";
+    
     const viewer = document.querySelector("model-viewer");
     viewer.addEventListener("load", () => {
         console.log("✅ Model loaded!");
@@ -35,5 +39,6 @@
   </script>
 </body>
 </html>
+
 
 
