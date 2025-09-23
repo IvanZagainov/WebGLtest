@@ -19,6 +19,14 @@
     stats.showPanel(0); // 0 = FPS
     document.body.appendChild(stats.dom);
 
+    const viewer = document.querySelector("model-viewer");
+    viewer.addEventListener("load", () => {
+        console.log("✅ Model loaded!");
+    });
+    viewer.addEventListener("error", (e) => {
+        console.error("❌ Error loading model:", e.detail);
+    });
+
     function loop() {
       stats.update();
       requestAnimationFrame(loop);
@@ -27,3 +35,4 @@
   </script>
 </body>
 </html>
+
